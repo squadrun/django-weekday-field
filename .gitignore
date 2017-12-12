@@ -1,0 +1,7 @@
+env/
+MANIFEST
+dist
+*.pyc
+*.egg-info
+.coverage
+.tox
