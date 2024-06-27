@@ -9,7 +9,7 @@ class ToggleCheckboxes(CheckboxSelectMultiple):
             'weekday_field/js/checkbox-widget.js',
         )
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if attrs is None:
             attrs = {}
         if utils.is_str(value):
@@ -23,7 +23,7 @@ class ToggleCheckboxes(CheckboxSelectMultiple):
         if 'class' not in attrs:
             attrs['class'] = ""
         attrs['class'] += " advanced-weekday-field"
-        result = super(ToggleCheckboxes, self).render(name, value, attrs)
+        result = super(ToggleCheckboxes, self).render(name, value, attrs, renderer)
         result = result.replace(
             " Weekends</label></li>",
             " Weekends</label></li></ul><ul>")
